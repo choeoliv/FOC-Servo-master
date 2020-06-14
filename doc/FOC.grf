@@ -1,0 +1,110 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.4.2.543
+MinVersion = 2.5
+OS = Windows NT 6.1 Service Pack 1
+
+[Axes]
+xMin = -17.6748226938353
+xMax = 24.1402089319185
+xTickUnit = 1
+xGridUnit = 1
+yMin = -11.5244246707273
+yMax = 10.9036377467225
+yTickUnit = 1
+yGridUnit = 1
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+
+[Func1]
+FuncType = 0
+y = 6 + Ia( x )
+Color = clRed
+
+[Func2]
+FuncType = 0
+y = 6 + Ib( x )
+Color = clBlue
+
+[Func3]
+FuncType = 0
+y = 6 + Ic( x )
+Color = clLime
+
+[Func4]
+FuncType = 0
+y = 3 + Clark_alpha( x )
+Color = clRed
+
+[Func5]
+FuncType = 0
+y = 3 + Clark_beta( x )
+Color = clBlue
+
+[Func6]
+FuncType = 0
+y = 0 + Park_d( x )
+Color = clRed
+
+[Func7]
+FuncType = 0
+y = 0 + Park_q( x )
+Color = clBlue
+
+[Func8]
+FuncType = 0
+y = -3 + InvPark_alpha( x )
+Color = clRed
+
+[Func9]
+FuncType = 0
+y = -3 + InvPark_beta( x )
+Color = clBlue
+
+[Func10]
+FuncType = 0
+y = -6 + InvClark_a( x )
+Color = clRed
+
+[Func11]
+FuncType = 0
+y = -6 + InvClark_b( x )
+Color = clBlue
+
+[Func12]
+FuncType = 0
+y = -6 + InvClark_c( x )
+Color = clLime
+
+[Func13]
+FuncType = 0
+y = -9 + vn( x )
+Color = clBlue
+
+[Data]
+TextLabelCount = 0
+FuncCount = 13
+PointSeriesCount = 0
+ShadeCount = 0
+RelationCount = 0
+OleObjectCount = 0
+
+[CustomFunctions]
+deg_to_rad(x) = x*pi/180
+Ia(x) = sin( x )
+Ib(x) = sin( x - deg_to_rad(120) )
+Ic(x) = sin( x + deg_to_rad(120) )
+Clark_alpha(x) = Ia( x )
+Clark_beta(x) = 1/sqrt(3) * Ia(x) + 2/sqrt(3) * Ib(x)
+Park_d(x) = Clark_alpha( x ) * cos( x ) + Clark_beta( x ) * sin( x )
+Park_q(x) = -Clark_alpha( x ) * sin( x ) + Clark_beta( x ) * cos( x )
+InvPark_alpha(x) = Park_d( x ) * cos( x ) - Park_q( x ) * sin( x )
+InvPark_beta(x) = Park_d( x ) * sin( x ) + Park_q( x ) * cos( x )
+InvClark_b(x) = InvPark_beta( x )
+InvClark_a(x) = ( -InvPark_beta( x ) + ( sqrt(3) * InvPark_alpha( x )  )  ) * 0.5
+InvClark_c(x) = ( -InvPark_beta( x ) - ( sqrt(3) * InvPark_alpha( x )  )  ) * 0.5
+vn(x) = ( InvClark_a(x) + InvClark_b(x) + InvClark_c(x) ) / 3
+

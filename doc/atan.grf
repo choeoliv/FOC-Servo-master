@@ -1,0 +1,53 @@
+;This file was created by Graph (http://www.padowan.dk)
+;Do not change this file from other programs.
+[Graph]
+Version = 4.4.2.543
+MinVersion = 2.5
+OS = Windows NT 6.1 Service Pack 1
+
+[Axes]
+xMin = -1.98709733995674
+xMax = 5.76131244004334
+xTickUnit = 0.2
+xGridUnit = 0.2
+yMin = -3.67018133573203
+yMax = 4.07822844426807
+yTickUnit = 0.5
+yGridUnit = 0.5
+AxesColor = clBlue
+GridColor = 0x00FF9999
+ShowLegend = 1
+Radian = 1
+
+[Func1]
+FuncType = 0
+y = sin(x)
+LegendText = sin( x )
+Style = 1
+Color = clRed
+
+[Func2]
+FuncType = 0
+y = sin(  x + deg_to_rad( 90 ) )
+LegendText = cos(x)
+Style = 1
+Color = clLime
+
+[Func3]
+FuncType = 0
+y = atan( sin( x ) / sin( x + deg_to_rad( 90 ) ) )
+LegendText = atan( sin( x ) / cos( x ) )
+Style = 1
+Color = clBlack
+
+[Data]
+TextLabelCount = 0
+FuncCount = 3
+PointSeriesCount = 0
+ShadeCount = 0
+RelationCount = 0
+OleObjectCount = 0
+
+[CustomFunctions]
+deg_to_rad(deg) = deg * ( pi / 180 )
+
